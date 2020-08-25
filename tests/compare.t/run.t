@@ -151,18 +151,18 @@ Dune ocaml-merlin:
       "build_path": [
         "OPAM/lib/base64",
         "OPAM/lib/bytes",
-        "$TESTCASE_ROOT/dot-merlin-reader/_build/default/.main.eobjs/byte"
+        "$TESTCASE_ROOT/dune-ocaml-merlin/_build/default/.main.eobjs/byte"
       ],
       "source_path": [
         "OPAM/lib/base64",
         "OPAM/lib/bytes",
-        "$TESTCASE_ROOT/dot-merlin-reader"
+        "$TESTCASE_ROOT/dune-ocaml-merlin"
       ],
       "cmi_path": [],
       "cmt_path": [],
       "flags_applied": [
         {
-          "workdir": "$TESTCASE_ROOT/dot-merlin-reader",
+          "workdir": "$TESTCASE_ROOT/dune-ocaml-merlin",
           "workval": [
             "-w",
             "@1..3@5..28@30..39@43@46..47@49..57@61..62-40",
@@ -427,3 +427,20 @@ Dot merlin reader:
 
 Compare both
   $ diff ocaml_merlin.res dot_reader.res
+  135c135
+  <       "$TESTCASE_ROOT/dune-ocaml-merlin/_build/default/.main.eobjs/byte"
+  ---
+  >       "$TESTCASE_ROOT/dot-merlin-reader/_build/default/.main.eobjs/byte"
+  140c140
+  <       "$TESTCASE_ROOT/dune-ocaml-merlin"
+  ---
+  >       "$TESTCASE_ROOT/dot-merlin-reader"
+  146c146
+  <         "workdir": "$TESTCASE_ROOT/dune-ocaml-merlin",
+  ---
+  >         "workdir": "$TESTCASE_ROOT/dot-merlin-reader",
+  188c188
+  <     "directory": "$TESTCASE_ROOT/dune-ocaml-merlin",
+  ---
+  >     "directory": "$TESTCASE_ROOT/dot-merlin-reader",
+  [1]
