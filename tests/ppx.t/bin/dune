@@ -1,0 +1,4 @@
+(executable
+ (name main)
+ (preprocess
+   (pps ppx_compare -no-locations-check ppx_sexp_conv -- -reserve-namespace toto)))
