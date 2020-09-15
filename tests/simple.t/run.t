@@ -5,7 +5,6 @@
 CRAM sanitization
   $ export OPAM_PREFIX=$(opam config var prefix | encode_prefix)
   $ export BUILD_PATH_PREFIX_MAP="OPAM=$OPAM_PREFIX:$BUILD_PATH_PREFIX_MAP"
-  $ echo $BUILD_PATH_PREFIX_MAP
 
 Use correct executables
   $ alias dot-merlin-reader="opam exec -- dot-merlin-reader"
