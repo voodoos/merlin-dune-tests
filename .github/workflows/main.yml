@@ -18,7 +18,14 @@ jobs:
   # This workflow contains a single job called "build"
   build:
     # The type of runner that the job will run on
-    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        os: 
+        - ubuntu-latest
+        - windows-latest
+
+    runs-on: ${{ matrix.os }}
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
@@ -32,9 +39,14 @@ jobs:
         # An explicit key for restoring and saving the cache
         key: ${{ runner.os }}-build
     - name: Set up OCaml
-      uses: avsm/setup-ocaml@v1.0.1
+      uses: avsm/setup-ocaml@v1.1.2
       with:
         # Version of the OCaml compiler to initialise
         ocaml-version: 4.10.0
-    - run: /bin/sh global_switch.sh
+
+    - run: opam pin add dune.2.8.0 git+https://github.com/voodoos/dune.git#merlin-abs-paths --yes
+    - run: opam pin add dot-merlin-reader.1.0 git+https://github.com/voodoos/merlin.git#ocaml-merlin-errors --yes
+    - run: opam pin add merlin.3.3.8 git+https://github.com/voodoos/merlin.git#ocaml-merlin-errors --yes
+    - run: opam install base64 conf-jq ppx_compare ppx_sexp_conv
+
     - run: opam exec -- dune runtest
