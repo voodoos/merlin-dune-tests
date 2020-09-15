@@ -1,3 +1,11 @@
+(env
+ (_
+  (binaries ../util/encode_prefix.exe)))
+
 (cram
  (applies_to :whole_subtree)
- (deps %{bin:dune} %{bin:ocamlmerlin} %{bin:dot-merlin-reader}))
+ (deps 
+  %{bin:encode_prefix}
+  %{bin:dune} 
+  %{bin:ocamlmerlin} 
+  %{bin:dot-merlin-reader}))
