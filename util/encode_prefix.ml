@@ -5,6 +5,7 @@ let encode_prefix str =
     | '%' -> Buffer.add_string buf "%#"
     | '=' -> Buffer.add_string buf "%+"
     | ':' -> Buffer.add_string buf "%."
+    | '/' -> Buffer.add_string buf "\\\\"
     | c -> Buffer.add_char buf c
   in
   String.iter push_char str;
