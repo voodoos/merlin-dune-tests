@@ -1,0 +1,10 @@
+(library
+ (name foo)
+ (modules foo)
+ (libraries re))
+
+(executable
+ (name main)
+ (modules main)
+ (libraries base64 foo))
+
