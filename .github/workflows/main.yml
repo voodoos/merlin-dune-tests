@@ -30,7 +30,7 @@ jobs:
         # A directory to store and save the cache
         path: ~/.opam
         # An explicit key for restoring and saving the cache
-        key: ${{ runner.os }}-build
+        key: ${{ runner.os }}-${{ hashFiles('*.sh') }}-build
     - name: Set up OCaml
       uses: avsm/setup-ocaml@v1.0.1
       with:
