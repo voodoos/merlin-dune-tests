@@ -35,10 +35,7 @@ Enable root discovery
   $ ocamlmerlin single dump-configuration -filename foo.ml < foo.ml |
   > jq '.value.merlin.build_path'
   [
-    "OPAM/lib/base64",
-    "OPAM/lib/bytes",
     "OPAM/lib/re",
     "OPAM/lib/seq",
-    "$TESTCASE_ROOT/_build/default/.foo.objs/byte",
-    "$TESTCASE_ROOT/_build/default/.main.eobjs/byte"
+    "$TESTCASE_ROOT/_build/default/.foo.objs/byte"
   ]
