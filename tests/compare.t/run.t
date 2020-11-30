@@ -41,7 +41,9 @@ Dune ocaml-merlin:
      -strict-sequence
      -strict-formats
      -short-paths
-     -keep-locs)))
+     -keep-locs))
+   (SUFFIX ".aml .amli")
+   (SUFFIX ".baml .bamli"))
 
   $ ocamlmerlin single dump-configuration -filename main.ml < main.ml |
   > jq '.value' | tee ../ocaml_merlin.res | jq '.merlin.build_path'
@@ -67,6 +69,8 @@ Dot merlin reader:
   S OPAM/lib/base64
   S OPAM/lib/bytes
   S .
+  SUFFIX .aml .amli
+  SUFFIX .baml .bamli
   FLG -w @1..3@5..28@30..39@43@46..47@49..57@61..62-40 -strict-sequence -strict-formats -short-paths -keep-locs
 
   $ ocamlmerlin single dump-configuration -filename main.ml <  main.ml |
@@ -93,7 +97,7 @@ Compare both:
   <         "workdir": "$TESTCASE_ROOT/dune-ocaml-merlin",
   ---
   >         "workdir": "$TESTCASE_ROOT/dot-merlin-reader",
-  188c188
+  196c196
   <     "directory": "$TESTCASE_ROOT/dune-ocaml-merlin",
   ---
   >     "directory": "$TESTCASE_ROOT/dot-merlin-reader",

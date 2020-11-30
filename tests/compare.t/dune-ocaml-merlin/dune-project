@@ -1,1 +1,15 @@
 (lang dune 2.7)
+
+(dialect
+ (name altercaml)
+ (implementation
+  (extension aml))
+ (interface
+  (extension amli)))
+
+(dialect
+ (name betteraltercaml)
+ (implementation
+  (extension baml))
+ (interface
+  (extension bamli)))
