@@ -25,7 +25,7 @@ Dune ocaml-merlin:
   T0NhbWwgcm9ja3Mh
 
   $ dune ocaml-merlin --dump-config=$(pwd)
-  main
+  Main
   ((EXCLUDE_QUERY_DIR)
    (B OPAM/lib/base64)
    (B OPAM/lib/bytes)
