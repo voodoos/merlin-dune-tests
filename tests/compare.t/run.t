@@ -26,7 +26,8 @@ Dune ocaml-merlin:
 
   $ dune ocaml-merlin --dump-config=$(pwd)
   Main
-  ((EXCLUDE_QUERY_DIR)
+  ((STDLIB OPAM/lib/ocaml)
+   (EXCLUDE_QUERY_DIR)
    (B OPAM/lib/base64)
    (B OPAM/lib/bytes)
    (B
@@ -97,6 +98,10 @@ Compare both:
   <         "workdir": "$TESTCASE_ROOT/dune-ocaml-merlin",
   ---
   >         "workdir": "$TESTCASE_ROOT/dot-merlin-reader",
+  176c176
+  <     "stdlib": "OPAM/lib/ocaml",
+  ---
+  >     "stdlib": null,
   196c196
   <     "directory": "$TESTCASE_ROOT/dune-ocaml-merlin",
   ---
