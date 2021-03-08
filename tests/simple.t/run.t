@@ -27,7 +27,7 @@ Project not build
     "type": "config",
     "sub": [],
     "valid": true,
-    "message": "Project isn't built. (Try calling `dune build`.)"
+    "message": "No config found for file \"main.ml\" in \"bin\". Try calling `dune build`."
   }
 
 Project built
